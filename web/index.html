@@ -1,82 +1,201 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>gem5 Bootcamp Latin America 2026</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>gem5 Bootcamp | Latin America 2026</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="gem5 Bootcamp Latin America 2026 — November 24–28, 2026 in Buenos Aires, Argentina.">
+    <link rel="stylesheet" href="./style.css">
     <script src="./slide-registry.js"></script>
     <script src="./app.js"></script>
 </head>
 <body>
-    <div id="main">
-        <div class="sidebar">
-            <div class="sidebar-header" onclick="route('#')">
-                <img class="sidebar-logo" src="icons/g5_icon.svg" alt="gem5 logo"/>
-                <div class="sidebar-title">
-                    gem5 Bootcamp
-                </div>
-            </div>
-            <div class="sidebar-toc">
-            </div>
-            <div class="sidebar-slido">
-                <iframe src="https://app.sli.do/event/qpr43XWrbjYJCdE3GHGCWg/questions" width="100%" height="400" frameborder="0"></iframe>
+<div id="main">
+    <aside class="sidebar">
+        <div class="sidebar-header" onclick="route('#')" role="button" tabindex="0" aria-label="Return to bootcamp home">
+            <img class="sidebar-logo" src="icons/g5_icon.svg" alt="gem5 logo">
+            <div>
+                <div class="sidebar-title">gem5 Bootcamp</div>
+                <div class="sidebar-subtitle">Latin America · 2026</div>
             </div>
         </div>
-        <div class="content">
-            <div id="home">
-                <div style="display: flex;" >
-                    <div style="flex: 10;">
-                        <div style="flex: 10; text-align: center;">
-                            <h1>Welcome to the official gem5 Bootcamp website!</h1>
-                        </div>
-                        <p>This website serves to provide all the slides discussed within the 2024  gem5 bootcamp series to Latin America.
-                            The event will take place November 24th-November 28th 2026 at the University of Buenos Aires, in Buenos Aires, Argentina.
-                            In this workshop you are going to learn about processor simulators in general, specifically about gem5, how to run experiments on top of the simulator, and all the amazing research you can do using processor simulators.
-                            The bootcamp will span several full days, featuring an engaging workshop focused on learning gem5.
-                            The workshop is designed to be inclusive, assuming no prior experience with gem5.
-                            The goal is to equip participants with a strong foundation in gem5 for conducting advanced research in computer architecture.</p>
-                        <p>Don't be late to any version updates and check out the official <a href="https://github.com/gem5/gem5">gem5 github</a>! You can find more information on our <a href="https://www.gem5.org/"> main website</a> and you can find the gem5 resources page <a href="https://resources.gem5.org/">here</a>. Happy programming!</p>
-                        <div style="flex: 1; text-align: center;">
-                            <h3>Contact us</h3>
-                            <a href="https://github.com/orgs/gem5/discussions">
-                                <img class="github-icon" src="icons/github.svg" alt="Github icon"/>
-                            </a>
-                            <a href="https://www.youtube.com/@gem5/">
-                                    <img class="youtube-icon" src="icons/youtube.svg" alt="Youtube icon"/>
-                            </a>
-                            <a href="https://gem5-workspace.slack.com/join/shared_invite/zt-2e2nfln38-xsIkN1aRmofRlAHOIkZaEA#/shared-invite/email">
-                                <img class="slack-icon" src="icons/slack.svg" alt="Slack icon"/>
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="icons/bootcamp_icon.svg" width=400 alt="gem5" style="float: right;">
-                    </div>
+        <div class="sidebar-nav-label">Course materials</div>
+        <div class="sidebar-toc"></div>
+        <div class="sidebar-resources">
+            <a href="https://www.gem5.org/" target="_blank" rel="noreferrer">gem5.org</a>
+            <a href="https://resources.gem5.org/" target="_blank" rel="noreferrer">gem5 Resources</a>
+            <a href="https://github.com/gem5/gem5" target="_blank" rel="noreferrer">gem5 on GitHub</a>
+        </div>
+        <div class="sidebar-slido">
+            <div class="sidebar-nav-label">Questions &amp; discussion</div>
+            <iframe src="https://app.sli.do/event/qpr43XWrbjYJCdE3GHGCWg/questions" title="Bootcamp questions and discussion"></iframe>
+        </div>
+    </aside>
 
+    <main class="content">
+        <section id="home">
+            <div class="hero">
+                <div class="hero-copy">
+                    <div class="eyebrow">gem5 Bootcamp · Latin America 2026</div>
+                    <h1>Learn gem5.<br><span>Build. Simulate. Explore.</span></h1>
+                    <p class="hero-lead">A five-day, hands-on bootcamp for students and researchers who want to use gem5 to study computer architecture and systems.</p>
+                    <div class="event-meta">
+                        <div><strong>November 24–28, 2026</strong><span>Tuesday–Saturday</span></div>
+                        <div><strong>Buenos Aires, Argentina</strong><span>Universidad de Buenos Aires</span></div>
+                    </div>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#schedule">View schedule</a>
+                        <a class="button button-secondary" href="#materials">Explore course materials</a>
+                    </div>
+                </div>
+                <div class="hero-art" aria-hidden="true">
+                    <div class="art-orbit orbit-one"></div>
+                    <div class="art-orbit orbit-two"></div>
+                    <div class="art-grid"></div>
+                    <img src="icons/bootcamp_icon.svg" alt="" class="bootcamp-mark">
+                    <div class="art-city">BUENOS<br>AIRES</div>
                 </div>
             </div>
-            </div> <!-- home -->
-            <div id="slideView">
-                <iframe id="slideFrame" title="Main slides (hidden)"></iframe>
-                <div id="slideButtons">
-                    <button id="prevSlide" onclick="prev_slide()">
-                        <span>Previous Slide Deck</span>
-                        <span></span>
-                    </button>
-                    <div id="slideButtonsCenter">
-                        <span id="slideName"></span>
-                        <a id="slidePdf" target="_blank">Download PDF</a>
-                    </div>
-                    <button id="nextSlide" onclick="next_slide()">
-                        <span>Next Slide Deck</span>
-                        <span></span>
-                    </button>
-                </div>
-            </div> <!-- slideView -->
-        </div> <!-- content -->
-    </div> <!-- main -->
-</body>
 
+            <section class="intro-grid" id="about">
+                <div>
+                    <div class="section-kicker">About the bootcamp</div>
+                    <h2>From your first configuration script to research-ready simulations.</h2>
+                </div>
+                <div class="intro-copy">
+                    <p>This workshop introduces processor simulation through gem5, then builds toward the skills needed to explore architecture research questions with confidence.</p>
+                    <p>No prior gem5 experience is assumed. Across the week, participants will work with processors, caches, memory systems, traffic generation, simulation statistics, SimObjects, checkpoints, fast-forwarding, and advanced simulation workflows.</p>
+                </div>
+            </section>
+
+            <section class="feature-cards">
+                <article><div class="card-number">01</div><h3>Learn by doing</h3><p>Hands-on sessions and examples keep the focus on building, running, and modifying real gem5 models.</p></article>
+                <article><div class="card-number">02</div><h3>Build research intuition</h3><p>Connect simulation mechanisms to the kinds of architectural questions researchers investigate with gem5.</p></article>
+                <article><div class="card-number">03</div><h3>Keep experimenting</h3><p>Use homework and office hours to turn the week's tutorials into your own experimental ideas.</p></article>
+            </section>
+
+            <section id="schedule" class="schedule-section">
+                <div class="section-heading-row">
+                    <div>
+                        <div class="section-kicker">November 24–28</div>
+                        <h2>Bootcamp schedule</h2>
+                    </div>
+                    <p>Session times are local to Buenos Aires (ART). Some activities may shift slightly as the hands-on work evolves.</p>
+                </div>
+                <div class="schedule-wrap">
+                    <table class="schedule-table">
+                        <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>9–10am</th>
+                            <th>10–11am</th>
+                            <th>11–11:15am</th>
+                            <th>11:15am–1:15pm</th>
+                            <th>1:15–2:45pm</th>
+                            <th>2:45–5pm</th>
+                            <th>Homework</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row"><strong>Tue<br>Nov 24</strong><span>Day 1</span></th>
+                            <td>Introduction · 01.Ch 00–03</td>
+                            <td>01.04–02.01<br>First config script, Std Lib<br><em>Hands-on</em></td>
+                            <td class="break">Break</td>
+                            <td>02.02–04<br>Processors, caches, memory<br><em>Hands-on</em></td>
+                            <td class="lunch">Lunch</td>
+                            <td>Introduce homework + office hours</td>
+                            <td><strong>1.</strong> Find and embed an encryption accelerator into the pipeline.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><strong>Wed<br>Nov 25</strong><span>Day 2</span></th>
+                            <td>03.01–02<br>Use what you made the day before to explore modes and resources.<br><em>Hands-on</em></td>
+                            <td class="break">Break</td>
+                            <td>04.01<br>SimObjects</td>
+                            <td class="lunch">Lunch</td>
+                            <td>04.02 Event-Driven Simulation<br>+ 04.03 Debug</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><strong>Thu<br>Nov 26</strong><span>Day 3</span></th>
+                            <td>04.05 <em>(to be made)</em><br>Ports + modify an existing SimObject<br><em>Possible accelerator/encryption example</em></td>
+                            <td class="break">Break</td>
+                            <td>Simulation metrics<br>Reading existing metrics + adding a new one</td>
+                            <td class="lunch">Lunch</td>
+                            <td>Homework intro + office hours</td>
+                            <td><strong>2.</strong> Implement the duplication of computation (Mateo's project).</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><strong>Fri<br>Nov 27</strong><span>Day 4</span></th>
+                            <td>04.04<br>Branch prediction</td>
+                            <td>Create your own SimObject<br><em>From the architecture perspective</em></td>
+                            <td class="break">Break</td>
+                            <td>03.03 Traffic generation + 03.04 communication (hypercall)</td>
+                            <td class="lunch">Lunch</td>
+                            <td>05.05 Disk images <em>(to do)</em></td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><strong>Sat<br>Nov 28</strong><span>Day 5</span></th>
+                            <td>05.02 Checkpoints + 05.03 Sampled simulation</td>
+                            <td>05.01 KVM fast forwarding</td>
+                            <td class="break">Break</td>
+                            <td>Examples of real research done with gem5<br><em>Mateo</em></td>
+                            <td class="lunch">Lunch</td>
+                            <td>Introduce homework + office hours</td>
+                            <td><strong>3.</strong> Choose a ChampSim predictor from the competition and implement it in gem5.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="schedule-note">The 1:15–2:45pm lunch block may be shortened to one hour depending on the day's progress.</p>
+            </section>
+
+            <section id="materials" class="materials-section">
+                <div>
+                    <div class="section-kicker">During the bootcamp</div>
+                    <h2>Everything you need is here.</h2>
+                    <p>Use the course menu on the left to open the slide decks. Code, examples, and other materials live in the bootcamp repository and are designed to be used with the provided development environment.</p>
+                </div>
+                <div class="materials-links">
+                    <a href="https://github.com/gem5bootcamp/latin-america-2026" target="_blank" rel="noreferrer"><span>GitHub repository</span><small>Code, materials &amp; bootcamp environment →</small></a>
+                    <a href="https://www.gem5.org/" target="_blank" rel="noreferrer"><span>gem5 documentation</span><small>Learn more about the simulator →</small></a>
+                    <a href="https://resources.gem5.org/" target="_blank" rel="noreferrer"><span>gem5 Resources</span><small>Browse workloads and resources →</small></a>
+                </div>
+            </section>
+
+            <section id="contact" class="contact-section">
+                <div><div class="section-kicker">Stay connected</div><h2>Questions, ideas, or code to share?</h2></div>
+                <div class="contact-right">
+                    <p>Use the discussion tools during the bootcamp, or connect with the broader gem5 community.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/orgs/gem5/discussions" target="_blank" rel="noreferrer">GitHub Discussions</a>
+                        <a href="https://www.youtube.com/@gem5/" target="_blank" rel="noreferrer">gem5 YouTube</a>
+                        <a href="https://gem5-workspace.slack.com/join/shared_invite/zt-2e2nfln38-xsIkN1aRmofRlAHOIkZaEA#/shared-invite/email" target="_blank" rel="noreferrer">gem5 Slack</a>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="home-footer">
+                <span>gem5 Bootcamp · Latin America 2026</span>
+                <span>Buenos Aires · November 24–28, 2026</span>
+            </footer>
+        </section>
+
+        <section id="slideView" class="hidden">
+            <div class="slide-view-header">
+                <a href="#" onclick="route('#'); return false;">← Back to bootcamp home</a>
+            </div>
+            <iframe id="slideFrame" title="Bootcamp slide deck"></iframe>
+            <div id="slideButtons">
+                <button id="prevSlide" onclick="prev_slide()"><span>Previous</span><span></span></button>
+                <div id="slideButtonsCenter"><span id="slideName"></span><a id="slidePdf" target="_blank">Download PDF</a></div>
+                <button id="nextSlide" onclick="next_slide()"><span>Next</span><span></span></button>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
 </html>

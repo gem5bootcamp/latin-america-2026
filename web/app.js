@@ -27,12 +27,19 @@ function route(url, push=true) {
         /* Push onto browser history */
         window.history.pushState('', '', url);
     }
-    /* Check for home page */
+    /* Check for home page or a section anchor on the home page */
     let home_page = document.querySelector('#home');
-    let slide_page = document.querySelector('#slideView')
-    if (url === '' || url === '#') {
+    let slide_page = document.querySelector('#slideView');
+    const home_sections = ['#', '#about', '#schedule', '#materials', '#contact'];
+    if (url === '' || home_sections.includes(url)) {
         home_page.classList.remove('hidden');
         slide_page.classList.add('hidden');
+        if (url !== '' && url !== '#') {
+            setTimeout(() => {
+                const section = document.querySelector(url);
+                if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 0);
+        }
         return;
     }
     /* Set iframe src */
@@ -123,7 +130,7 @@ function sidebar_category_onclick(e) {
  * Relative Link to Git Translation !!TEMPORARY!!
  * ========================================================================= */
 
-const bootcamp_base = 'https://github.com/gem5bootcamp/latin-america-2024/tree/main/';
+const bootcamp_base = 'https://github.com/gem5bootcamp/latin-america-2026/tree/main/';
 const gem5_base = 'https://github.com/gem5/gem5/tree/stable/';
 const gem5_resources_base = 'https://github.com/gem5/gem5-resources/tree/stable/';
 
